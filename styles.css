@@ -121,18 +121,56 @@ h1 {
   line-height: 0.86;
 }
 
+.nameplate {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+}
+
+.nameplate h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.emblem {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 145%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  color: var(--ink);
+  opacity: 0.2;
+  pointer-events: none;
+  overflow: visible;
+  transition: opacity 1.4s ease;
+}
+
+.emblem.rest { opacity: 0.11; }
+
 .lede {
+  display: grid;
   max-width: 36rem;
   margin: 1.5rem 0 0;
   font-size: 1.35rem;
   color: var(--ink);
 }
 
+.lede-line {
+  grid-area: 1 / 1;
+  transition: opacity 0.9s ease;
+}
+
+.lede-latin { opacity: 0; }
+
+.lede.show-latin .lede-line:first-child { opacity: 0; }
+.lede.show-latin .lede-latin { opacity: 1; }
+
 .duties {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.45rem 1.4rem;
+  gap: 0.45rem 0.85rem;
   margin: 0.9rem 0 0;
   color: var(--dim);
   letter-spacing: 0.12em;
@@ -140,36 +178,13 @@ h1 {
   font-size: 0.78rem;
 }
 
-.sprite {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-.mark {
-  width: 0.85rem;
-  height: 0.85rem;
-  margin-right: 0.45rem;
-  display: inline-block;
-  vertical-align: -0.14em;
-  overflow: visible;
-}
-
-.signs {
-  display: flex;
-  gap: 0.85rem;
-  margin: 0 0 1.15rem;
-  color: var(--dim);
-}
-
-.signs .mark {
-  width: 1.05rem;
-  height: 1.05rem;
-  margin: 0;
-}
-
 .duties a:hover { color: var(--ink); }
+
+.sep {
+  font-weight: 700;
+  font-size: 1.15em;
+  line-height: 1;
+}
 
 .plate {
   margin: 0;
