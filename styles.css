@@ -94,11 +94,10 @@ a.out:hover { text-decoration-color: var(--ink); }
 .nav a:hover { color: white; }
 
 .hero {
-  min-height: calc(100vh - 4.5rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 12vh var(--pad) 8vh;
+  padding: 14vh var(--pad) 4.5vh;
 }
 
 .eyebrow {
@@ -117,8 +116,8 @@ h1, h2 {
 }
 
 h1 {
-  font-size: clamp(3.4rem, 10.5vw, 8.5rem);
-  line-height: 0.86;
+  font-size: clamp(3.4rem, 13vw, 12.5rem);
+  line-height: 0.84;
 }
 
 .nameplate {
@@ -136,7 +135,7 @@ h1 {
   position: absolute;
   left: 50%;
   top: 46%;
-  width: 145%;
+  width: 158%;
   height: auto;
   transform: translate(-50%, -50%);
   color: var(--ink);
@@ -151,8 +150,8 @@ h1 {
 .lede {
   display: grid;
   max-width: 36rem;
-  margin: 1.5rem 0 0;
-  font-size: 1.35rem;
+  margin: 1.35rem 0 0;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
   color: var(--ink);
 }
 
@@ -292,6 +291,16 @@ figure { margin: 0; }
 }
 
 .contact a:hover { color: var(--ink); }
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 4.75rem var(--pad) 2.5rem;
+  }
+
+  h1 { font-size: 15.6vw; }
+
+  .lede { margin-top: 1rem; }
+}
 
 @media (max-width: 800px) {
   .chapter,
